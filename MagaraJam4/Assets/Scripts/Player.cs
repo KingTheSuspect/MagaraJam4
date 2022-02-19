@@ -5,12 +5,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public float hiz;
+    public static float hiz = 5;
     private float hAbs;
+    [SerializeField] private UI_Inventory uiInventory;
+
+    private Inventory inventory;
 
     void Start()
     {
-
+        inventory = new Inventory();
+        uiInventory.SetInventory(inventory);
     }
 
 
