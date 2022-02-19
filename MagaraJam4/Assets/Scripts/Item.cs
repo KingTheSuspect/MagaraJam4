@@ -7,11 +7,9 @@ public class Item
 {
     public enum ItemType
     {
-        Sword,
-        Coin,
-        Medkit,
         Food_Pizza,
         Food_Cola,
+
     }
 
     public Sprite inventoryIcon;

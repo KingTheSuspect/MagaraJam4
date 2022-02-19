@@ -34,7 +34,7 @@ public class YemekSistemi : MonoBehaviour
         }
         else
         {
-            Player.hiz = 3;
+            Player.hiz = 5;
         }
 
 
