@@ -23,8 +23,7 @@ public class Hedef : MonoBehaviour
             Instantiate(umut, new Vector2(0, 0), new Quaternion(0, 0, 0, 0));
             Destroy(kart);
             Destroy(this.gameObject);
-           
-           
+          
         }
     }
 }
