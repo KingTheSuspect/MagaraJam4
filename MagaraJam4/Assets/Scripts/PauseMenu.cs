@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
-    [SerializeField] private UI_Inventory env;
+    [SerializeField] UI_Inventory pauseMenuInventory;
 
     void Update()
     {
@@ -24,6 +24,7 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+
     }
 
     public void Resume()
@@ -34,18 +35,15 @@ public class PauseMenu : MonoBehaviour
     }
     void Pause()
     {
-        
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
         if (sayac == 0)
         {
-            env.RefreshInventoryItems();
+            pauseMenuInventory.RefreshInventoryItems();
             sayac++;
         }
         Debug.Log(sayac);
-        
-       
     }
 
     public void LoadMenu()
