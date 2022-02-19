@@ -2,28 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hedef : MonoBehaviour
+public class hayal : MonoBehaviour
 {
     public GameObject kart;
-    public GameObject umut;
+    public GameObject insan;
     void Start()
     {
-        
+
     }
 
-    
+
     void Update()
     {
-        
+
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "amac")
+        if (col.gameObject.tag == "gercek")
         {
-            umut.SetActive(true);
+            insan.SetActive(true);
             Destroy(kart);
             Destroy(this.gameObject);
-          
+
         }
     }
 }

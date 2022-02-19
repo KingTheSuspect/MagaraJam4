@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 61ab661a19d121a4ea3ddad3db7f4bd5
+guid: e3a49af7083221f48b495eb6eea4d8e3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - kart: {instanceID: 0}
-  - umut: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
