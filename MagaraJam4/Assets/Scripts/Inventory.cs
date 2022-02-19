@@ -29,8 +29,10 @@ public class Inventory:MonoBehaviour
                 sc = itemList[Random.Range(0, itemList.Count)];
             else
                 sc = itemList[i];
+            
 
-            while (usedItems.Contains(sc) && inventoryType == InventoryType.Market)
+            int j = 0;
+            while (usedItems.Contains(sc) && inventoryType == InventoryType.Market && j<1000)
             {
                 sc = itemList[Random.Range(0, itemList.Count)];
                 if (!usedItems.Contains(sc))
@@ -38,6 +40,7 @@ public class Inventory:MonoBehaviour
                     usedItems.Add(sc);
                     break;
                 }
+                j++;
             }
             Item newItem = new Item
             {
@@ -47,6 +50,9 @@ public class Inventory:MonoBehaviour
                 energyAmount = sc.energyAmount,
                 price = sc.price,
             };
+            if (!usedItems.Contains(sc))
+                usedItems.Add(sc);
+
             AddItem(newItem);
         }
     }

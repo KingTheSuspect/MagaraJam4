@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector2(-1, 1);
             transform.Translate(h * hiz * Time.deltaTime, 0, 0);
         }
-        parasayar.text = "$" + money;
+        parasayar.text = "$" + money.ToString("0.00"); ;
 
     }
 

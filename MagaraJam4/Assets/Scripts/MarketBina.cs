@@ -11,6 +11,7 @@ public class MarketBina : MonoBehaviour
     Player player = null;
     UI_Inventory marketInventoryUI = null;
     MarketUIController marketUI;
+    bool openBefore = false;
     private void Awake()
     {
         marketInventory = transform.GetComponent<Inventory>();
@@ -28,9 +29,25 @@ public class MarketBina : MonoBehaviour
     }
     public void Satinal()
     {
-        player.GetInventory().AddItem(marketInventoryUI.selectedItem);
-        marketInventory.RemoveItem(marketInventoryUI.selectedItem);
-        marketInventoryUI.RefreshItems(marketInventory);
+        if (marketInventoryUI.selectedItem != null)
+        {
+            openBefore = false;
+            player.GetInventory().AddItem(marketInventoryUI.selectedItem);
+            marketInventory.RemoveItem(marketInventoryUI.selectedItem);
+            marketInventoryUI.RefreshItems(marketInventory);
+            if (player.uiInventory.gameObject.activeInHierarchy)
+                openBefore = true;
+
+            if (!openBefore)
+                player.uiInventory.gameObject.SetActive(true);
+
+            player.uiInventory.RefreshItems(player.GetInventory());
+            Player.money -= marketInventoryUI.selectedItem.price;
+            marketInventoryUI.selectedItem = null;
+        }
+        //if(!openBefore)
+        //player.uiInventory.gameObject.SetActive(false);
+
     }
 
     public void Ayril()
