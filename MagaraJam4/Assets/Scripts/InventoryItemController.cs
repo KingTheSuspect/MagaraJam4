@@ -7,6 +7,11 @@ using UnityEngine.EventSystems;
 public class InventoryItemController : MonoBehaviour,IPointerDownHandler
 {
     Item item;
+    YemekSistemi yemekSistemi;
+    void Start()
+    {
+        yemekSistemi = FindObjectOfType<YemekSistemi>(true);
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -18,6 +23,7 @@ public class InventoryItemController : MonoBehaviour,IPointerDownHandler
                 YemekSistemi.yemek = 100;
 
             GetComponentInParent<UI_Inventory>().RefreshInventoryItems();
+            yemekSistemi.SetYemekSayar();
         }
 
     }

@@ -39,6 +39,10 @@ public class YemekSistemi : MonoBehaviour
 
 
     }
-    
+    public void SetYemekSayar()
+    {
+        yemeksayar.text = "%" + yemek;
+    }
+
 
 }
