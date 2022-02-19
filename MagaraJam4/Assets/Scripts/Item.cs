@@ -10,9 +10,12 @@ public class Item
         Sword,
         Coin,
         Medkit,
+        Food_Pizza,
+        Food_Cola,
     }
 
     public Sprite inventoryIcon;
     public int amount;
-    public ItemType itemType; 
+    public ItemType itemType;
+    public int energyAmount = -1;
 }

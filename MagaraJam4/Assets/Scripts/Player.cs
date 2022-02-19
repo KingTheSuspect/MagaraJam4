@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-
         float h = Input.GetAxisRaw("Horizontal");
 
         hAbs = Mathf.Abs(h);
@@ -36,8 +35,6 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector2(-1, 1);
             transform.Translate(h * hiz * Time.deltaTime, 0, 0);
         }
-
-
     }
 
 

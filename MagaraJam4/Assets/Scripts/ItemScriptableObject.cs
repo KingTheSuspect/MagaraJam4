@@ -9,5 +9,6 @@ public class ItemScriptableObject:ScriptableObject
     public ItemType itemType;
     public int amount;
     public Sprite icon;
+    public int energyAmount = -1;
 
 }
