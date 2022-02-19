@@ -7,7 +7,7 @@ public class YemekSistemi : MonoBehaviour
 {
     public TextMeshProUGUI yemeksayar;
 
-    public static int yemek = 70;
+    public static int yemek = 5;
     private int random = 10;
     private float saat;
 
@@ -30,7 +30,7 @@ public class YemekSistemi : MonoBehaviour
         if (yemek <= 0)
         {
             yemek = 0;
-            Player.hiz = 2;
+            Player.hiz = 1;
         }
         else
         {

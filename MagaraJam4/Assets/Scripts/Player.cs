@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public static float hiz = 3;
+    public static float hiz = 5;
     private float hAbs;
     public UI_Inventory uiInventory;
 
