@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static ItemScriptableObject;
 
-public class Item
+public class Item 
 {
-
-
     public enum ItemType
     {
         Sword,
@@ -13,17 +12,7 @@ public class Item
         Medkit,
     }
 
-    public ItemType itemType;
+    public Sprite inventoryIcon;
     public int amount;
-
-    public Sprite GetSprite()
-    {
-        switch(itemType)
-        {
-            default:
-            case ItemType.Coin: return ItemAssets.Instance.kola1;
-            case ItemType.Sword: return ItemAssets.Instance.kola2;
-        }
-    }
-
+    public ItemType itemType; 
 }

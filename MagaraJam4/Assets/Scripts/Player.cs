@@ -7,13 +7,13 @@ public class Player : MonoBehaviour
 
     public static float hiz = 5;
     private float hAbs;
-    [SerializeField] private UI_Inventory uiInventory;
+    [SerializeField] UI_Inventory uiInventory;
 
     private Inventory inventory;
 
     void Start()
     {
-        inventory = new Inventory();
+        inventory = transform.GetComponent<Inventory>();
         uiInventory.SetInventory(inventory);
     }
 

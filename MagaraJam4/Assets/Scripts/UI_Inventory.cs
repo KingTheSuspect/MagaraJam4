@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class UI_Inventory : MonoBehaviour
 {
-
-    private Inventory inventory;
+    Inventory inventory;
     private Transform itemSlotContainer;
     private Transform itemSlotTemplete;
 
@@ -19,6 +18,8 @@ public class UI_Inventory : MonoBehaviour
     public void SetInventory(Inventory inventory)
     {
         this.inventory = inventory;
+        if (inventory == null)
+            Debug.Log("inventory boþ");
         
     }
     public void RefreshInventoryItems()
@@ -30,9 +31,8 @@ public class UI_Inventory : MonoBehaviour
         {
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplete, itemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
-            itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
-           // Image image = itemSlotRectTransform.Find("image").GetComponent<Image>();
-           // image.sprite = item.GetSprite();
+            itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, -y * itemSlotCellSize);
+            itemSlotRectTransform.Find("image").GetComponent<SpriteRenderer>().sprite = item.inventoryIcon;
             x++;
             if (x > 4)
             {
