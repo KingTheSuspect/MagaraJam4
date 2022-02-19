@@ -501,7 +501,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &318267595
 RectTransform:
   m_ObjectHideFlags: 0
@@ -519,7 +519,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 952, y: 668.33}
+  m_AnchoredPosition: {x: -126.83, y: 43.667}
   m_SizeDelta: {x: 253.66667, y: 325.33334}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &318267596
@@ -679,7 +679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kart: {fileID: 810579096}
-  umut: {fileID: 5569443193614979829, guid: b6b85c77d2731e341b8be276d98d8fb7, type: 3}
+  umut: {fileID: 318267594}
 --- !u!61 &681336636
 BoxCollider2D:
   m_ObjectHideFlags: 0

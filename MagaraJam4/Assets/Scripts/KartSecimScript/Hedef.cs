@@ -20,7 +20,7 @@ public class Hedef : MonoBehaviour
     {
         if (col.gameObject.tag == "amac")
         {
-            Instantiate(umut, new Vector2(0, 0), new Quaternion(0, 0, 0, 0));
+            umut.SetActive(true);
             Destroy(kart);
             Destroy(this.gameObject);
           
