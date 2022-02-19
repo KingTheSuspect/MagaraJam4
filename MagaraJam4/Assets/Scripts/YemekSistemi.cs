@@ -7,7 +7,7 @@ public class YemekSistemi : MonoBehaviour
 {
     public TextMeshProUGUI yemeksayar;
 
-    public static int yemek = 5;
+    public static int yemek = 70;
     private int random = 10;
     private float saat;
 
