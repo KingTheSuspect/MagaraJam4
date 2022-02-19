@@ -18,4 +18,5 @@ public class Item
     public int amount;
     public ItemType itemType;
     public int energyAmount = -1;
+    public float price = 0f;
 }

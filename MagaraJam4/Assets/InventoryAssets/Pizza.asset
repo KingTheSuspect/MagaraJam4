@@ -16,3 +16,4 @@ MonoBehaviour:
   amount: 10
   icon: {fileID: 21300000, guid: a6115e5ad90168a4bac818c5d75155ba, type: 3}
   energyAmount: 15
+  price: 0.5

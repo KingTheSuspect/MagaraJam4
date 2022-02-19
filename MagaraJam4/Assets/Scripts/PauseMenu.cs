@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
     [SerializeField] UI_Inventory pauseMenuInventory;
-
+    Inventory playerInventory = null;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -23,6 +23,10 @@ public class PauseMenu : MonoBehaviour
             {
                 Pause();
             }
+        }
+        if(playerInventory == null)
+        {
+            playerInventory = FindObjectOfType<Player>().GetInventory();
         }
 
     }
@@ -40,7 +44,7 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
         if (sayac == 0)
         {
-            pauseMenuInventory.RefreshInventoryItems();
+            pauseMenuInventory.RefreshItems(playerInventory);
             sayac++;
         }
         Debug.Log(sayac);

@@ -5,19 +5,47 @@ using UnityEngine;
 
 public class Inventory:MonoBehaviour
 {
+    public enum InventoryType
+    {
+        Player,
+        Market,
+    }
+    public InventoryType inventoryType;
     public List<ItemScriptableObject> itemList;
-    private List<Item> playerItems;
+    private List<Item> inventoryItems;
+    public int marketItemCount = 3;
+    private List<ItemScriptableObject> usedItems = new List<ItemScriptableObject>();
     void Awake()
     {
-        playerItems = new List<Item>();
-        for (int i = 0; i < itemList.Count; i++)   // Creating Inventory Object from ItemAsset
+        inventoryItems = new List<Item>();
+        int count = itemList.Count;
+        if (inventoryType == InventoryType.Market)
+            count = marketItemCount;
+
+        for (int i = 0; i < count; i++)   // Creating Inventory Object from ItemAsset
         {
+            ItemScriptableObject sc = null;
+            if (inventoryType == InventoryType.Market)
+                sc = itemList[Random.Range(0, itemList.Count)];
+            else
+                sc = itemList[i];
+
+            while (usedItems.Contains(sc) && inventoryType == InventoryType.Market)
+            {
+                sc = itemList[Random.Range(0, itemList.Count)];
+                if (!usedItems.Contains(sc))
+                {
+                    usedItems.Add(sc);
+                    break;
+                }
+            }
             Item newItem = new Item
             {
-                inventoryIcon = itemList[i].icon,
-                itemType = itemList[i].itemType,
-                amount = itemList[i].amount,
-                energyAmount = itemList[i].energyAmount,
+                inventoryIcon = sc.icon,
+                itemType = sc.itemType,
+                amount = sc.amount,
+                energyAmount = sc.energyAmount,
+                price = sc.price,
             };
             AddItem(newItem);
         }
@@ -25,19 +53,24 @@ public class Inventory:MonoBehaviour
 
     public void AddItem(Item item)
     {
-        Item found = playerItems.FirstOrDefault(el => el.itemType == item.itemType);    // Check if same type elements exist in the list
+        Item found = inventoryItems.FirstOrDefault(el => el.itemType == item.itemType);    // Check if same type elements exist in the list
         if (found!=null)
         {
             found.amount++;
         }
         else
         {
-            playerItems.Add(item);
+            inventoryItems.Add(item);
         }
     }
     public List<Item> GetItemList()
     {
-        return playerItems;
+        return inventoryItems;
     }
+    public void RemoveItem(Item item)
+    {
+        inventoryItems.Remove(item);
+    }
+
 }
 

@@ -8,6 +8,8 @@ public class InventoryItemController : MonoBehaviour,IPointerDownHandler
 {
     Item item;
     YemekSistemi yemekSistemi;
+    public static Item selectedItem;
+    public Inventory inventory = null;
     void Start()
     {
         yemekSistemi = FindObjectOfType<YemekSistemi>(true);
@@ -15,17 +17,21 @@ public class InventoryItemController : MonoBehaviour,IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (item.amount > 0 && YemekSistemi.yemek<100 && Enum.GetName(typeof(Item.ItemType),item.itemType).Contains("Food"))
+        if (item.amount > 0 && YemekSistemi.yemek<100 && Enum.GetName(typeof(Item.ItemType),item.itemType).Contains("Food") && inventory.inventoryType == Inventory.InventoryType.Player)
         {
             item.amount -= 1;
             YemekSistemi.yemek += item.energyAmount;
             if (YemekSistemi.yemek > 100)
                 YemekSistemi.yemek = 100;
 
-            GetComponentInParent<UI_Inventory>().RefreshInventoryItems();
+            GetComponentInParent<UI_Inventory>().RefreshItems(inventory);
             yemekSistemi.SetYemekSayar();
         }
 
+        if (inventory.inventoryType == Inventory.InventoryType.Market)
+        {
+            GetComponentInParent<UI_Inventory>().selectedItem = item;
+        }
     }
 
     public void SetItem(Item item)

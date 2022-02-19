@@ -6,37 +6,62 @@ public class MarketBina : MonoBehaviour
 {
     private bool triggered;
     public GameObject hata;
-    public Inventory inventory;
-    public GameObject Market;
-
-
+    public GameObject MarketUI;
+    Inventory marketInventory;
+    Player player = null;
+    UI_Inventory marketInventoryUI = null;
+    MarketUIController marketUI;
+    private void Awake()
+    {
+        marketInventory = transform.GetComponent<Inventory>();
+        marketInventoryUI = MarketUI.transform.GetComponentInChildren<UI_Inventory>(true);
+        marketUI = MarketUI.transform.GetComponentInChildren<MarketUIController>();
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && triggered == true)
         {
             Time.timeScale = 0f;
-            Market.SetActive(true);
+            MarketUI.SetActive(true);
+            marketInventoryUI.RefreshItems(marketInventory);
         }
     }
     public void Satinal()
     {
-        inventory.AddItem(new Item { itemType = Item.ItemType.Coin, amount = 1 });
+        player.GetInventory().AddItem(marketInventoryUI.selectedItem);
+        marketInventory.RemoveItem(marketInventoryUI.selectedItem);
+        marketInventoryUI.RefreshItems(marketInventory);
     }
+
     public void Ayril()
     {
         Time.timeScale = 1f;
-        Market.SetActive(false);
-        hata.SetActive(false);
-
-
+        MarketUI.SetActive(false);
+        if(hata!=null)
+            hata.SetActive(false);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         triggered = true;
+        if (player == null)
+            player = collision.gameObject.GetComponent<Player>();
+        marketUI.buyButton.onClick.RemoveAllListeners();
+        marketUI.buyButton.onClick.AddListener(() =>
+        {
+            Satinal();
+        });
+        marketUI.leaveButton.onClick.RemoveAllListeners();
+        marketUI.leaveButton.onClick.AddListener(() =>
+        {
+            Ayril();
+        });
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         triggered = true;
+        if (player == null)
+            player = collision.gameObject.GetComponent<Player>();
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

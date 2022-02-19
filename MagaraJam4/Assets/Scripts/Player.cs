@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -7,17 +8,22 @@ public class Player : MonoBehaviour
 
     public static float hiz = 5;
     private float hAbs;
-    [SerializeField] UI_Inventory uiInventory;
+    public UI_Inventory uiInventory;
 
     private Inventory inventory;
+    public TextMeshProUGUI parasayar;
+
+    public static double money = 1.27;
 
     void Start()
     {
         inventory = transform.GetComponent<Inventory>();
-        uiInventory.SetInventory(inventory);
     }
 
-
+    public Inventory GetInventory()
+    {
+        return inventory;
+    }
     void Update()
     {
         float h = Input.GetAxisRaw("Horizontal");
@@ -35,6 +41,8 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector2(-1, 1);
             transform.Translate(h * hiz * Time.deltaTime, 0, 0);
         }
+        parasayar.text = "$" + money;
+
     }
 
 
