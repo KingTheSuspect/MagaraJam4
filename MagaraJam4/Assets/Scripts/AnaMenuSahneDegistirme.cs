@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class AnaMenuSahneDegistirme : MonoBehaviour
 {
-
+    public Animator transition;
     public int sahneid;
     public int sahneid2;
+    public float sure;
 
-     public void Baslat()
+    public void Baslat()
     {
-        SceneManager.LoadScene(sahneid);
+        StartCoroutine(LoadLevel());
     }
     public void Ayarlar()
     {
@@ -21,6 +22,11 @@ public class AnaMenuSahneDegistirme : MonoBehaviour
     {
         Application.Quit();
     }
-
+    IEnumerator LoadLevel()
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(sure);
+        SceneManager.LoadScene(sahneid);
+    }
 
 }

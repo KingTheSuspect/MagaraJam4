@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SaatSistemi : MonoBehaviour
 {
-    public float saat, dakika;
+    public static float saat = 17, dakika= 30;
 
     public TextMeshProUGUI texts;
 
@@ -23,5 +22,12 @@ public class SaatSistemi : MonoBehaviour
         {
             saat = 0;
         }
+        if (saat >= 2 && saat < 7)
+        {
+            GunSistemi.gun += 1;
+            SaatSistemi.saat = 8;
+            SaatSistemi.dakika = 30;
+        }
+
     }
 }

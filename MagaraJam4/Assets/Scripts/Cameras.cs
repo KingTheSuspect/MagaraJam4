@@ -1,34 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Cameras : MonoBehaviour {
-
-    private Transform player;
-
-    [SerializeField]
-    float smoothX;
-    [SerializeField]
-    float smoothY;
-
-    void Start()
+public class Cameras: MonoBehaviour
+{
+    public Transform target;
+    public Vector3 offset;
+    public float smooth;
+    void FixedUpdate()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        Follow();
     }
 
-
-    void LateUpdate()
+    void Follow()
     {
-
-        float posX = Mathf.MoveTowards(transform.position.x, player.position.x, smoothX);
-        float posY = Mathf.MoveTowards(transform.position.y, player.position.y, smoothY);
-
-        transform.position = new Vector3(posX, posY, transform.position.z);
-
-
+        Vector3 targetpos = target.position + offset;
+        Vector3 smoothedpos = Vector3.Lerp(transform.position, targetpos, smooth * Time.fixedDeltaTime);
+        transform.position = smoothedpos;
     }
-
 
 }
-
-
