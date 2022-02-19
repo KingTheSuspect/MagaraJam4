@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public static float hiz = 5;
+    public static float hiz = 3;
     private float hAbs;
     [SerializeField] UI_Inventory uiInventory;
 
