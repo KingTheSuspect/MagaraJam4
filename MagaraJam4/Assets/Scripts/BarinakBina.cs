@@ -37,7 +37,6 @@ public class BarinakBina : MonoBehaviour
         {
             dinlen = true;
             StartCoroutine(LoadLevel());
-            Time.timeScale = 1f;
             Barinak.SetActive(false);
 
         }
@@ -70,9 +69,12 @@ public class BarinakBina : MonoBehaviour
         yield return new WaitForSeconds(2);
         transition.SetTrigger("Start2");
         Gece.SetActive(true);
+        yield return new WaitForSeconds(2);
+        Time.timeScale = 0f;
     }
     public void Devam()
     {
+        Time.timeScale = 1f;
         StartCoroutine(LoadLevel2());
     }
     IEnumerator LoadLevel2()
