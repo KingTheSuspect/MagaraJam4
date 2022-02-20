@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Oyun.unity
     guid: 60497bf7dcfb9e14dae0c7e9a672b64c
+  - enabled: 1
+    path: Assets/Scenes/Ayarlar.unity
+    guid: 767fbd016c69a7e42aac038df4f132ba
+  - enabled: 1
+    path: Assets/Scenes/Emektarlar.unity
+    guid: 808007b65e34f2d4e81b7d6879e54893
   m_configObjects: {}
