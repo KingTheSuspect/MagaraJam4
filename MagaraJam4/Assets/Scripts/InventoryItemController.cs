@@ -33,6 +33,10 @@ public class InventoryItemController : MonoBehaviour,IPointerDownHandler
             GetComponentInParent<UI_Inventory>().RefreshItems(inventory);
             mutlulukSistemi.SetMutlulukSayar();
             yemekSistemi.SetYemekSayar();
+            if (item.amount == 0)
+                inventory.RemoveItem(item);
+            GetComponentInParent<UI_Inventory>().RefreshItems(inventory);
+
         }
 
         if (inventory.inventoryType == Inventory.InventoryType.Market)
