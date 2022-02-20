@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 public class SaatSistemi : MonoBehaviour
 {
-    public static float saat = 14, dakika= 30;
+    public static float saat = 18, dakika= 30;
 
     public TextMeshProUGUI texts;
     public Animator animator;
@@ -14,7 +15,7 @@ public class SaatSistemi : MonoBehaviour
     public GameObject Gece;
     public GameObject devam;
 
-
+    public static event EventHandler MarketYenile;
     private void FixedUpdate()
     {
         texts.text = ""+saat.ToString("00")+":"+dakika.ToString("00");
@@ -59,6 +60,7 @@ public class SaatSistemi : MonoBehaviour
         SaatSistemi.saat = 8;
         SaatSistemi.dakika = 30;
         ilk = true;
+        MarketYenile?.Invoke(this,EventArgs.Empty);
     }
     public void Devam()
     {

@@ -26,10 +26,17 @@ public class InventoryItemController : MonoBehaviour,IPointerDownHandler
             MutlulukSistemi.mutluluk += item.mutluluk;
             if (YemekSistemi.yemek > 100)
                 YemekSistemi.yemek = 100;
+            if (MutlulukSistemi.mutluluk > 100)
+                MutlulukSistemi.mutluluk = 100;
+ 
 
             GetComponentInParent<UI_Inventory>().RefreshItems(inventory);
             mutlulukSistemi.SetMutlulukSayar();
             yemekSistemi.SetYemekSayar();
+            if (item.amount == 0)
+                inventory.RemoveItem(item);
+            GetComponentInParent<UI_Inventory>().RefreshItems(inventory);
+
         }
 
         if (inventory.inventoryType == Inventory.InventoryType.Market)

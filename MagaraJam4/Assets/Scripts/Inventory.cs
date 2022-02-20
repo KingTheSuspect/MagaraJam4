@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Inventory:MonoBehaviour
 {
@@ -18,6 +20,33 @@ public class Inventory:MonoBehaviour
     void Awake()
     {
         inventoryItems = new List<Item>();
+        CreateItems();
+        SaatSistemi.MarketYenile += OnDayPassed;
+    }
+    public void AddItem(Item item)
+    {
+        Item found = inventoryItems.FirstOrDefault(el => el.itemType == item.itemType);    // Check if same type elements exist in the list
+        if (found!=null)
+        {
+            found.amount++;
+        }
+        else
+        {
+            inventoryItems.Add(item);
+        }
+    }
+    public List<Item> GetItemList()
+    {
+        return inventoryItems;
+    }
+    public void RemoveItem(Item item)
+    {
+        inventoryItems.Remove(item);
+    }
+
+    void CreateItems()
+    {
+        inventoryItems.Clear();
         int count = itemList.Count;
         if (inventoryType == InventoryType.Market)
             count = marketItemCount;
@@ -29,10 +58,10 @@ public class Inventory:MonoBehaviour
                 sc = itemList[Random.Range(0, itemList.Count)];
             else
                 sc = itemList[i];
-            
+
 
             int j = 0;
-            while (usedItems.Contains(sc) && inventoryType == InventoryType.Market && j<1000)
+            while (usedItems.Contains(sc) && inventoryType == InventoryType.Market && j < 1000)
             {
                 sc = itemList[Random.Range(0, itemList.Count)];
                 if (!usedItems.Contains(sc))
@@ -57,27 +86,10 @@ public class Inventory:MonoBehaviour
             AddItem(newItem);
         }
     }
-
-    public void AddItem(Item item)
+    public void OnDayPassed(object sender,EventArgs e)
     {
-        Item found = inventoryItems.FirstOrDefault(el => el.itemType == item.itemType);    // Check if same type elements exist in the list
-        if (found!=null)
-        {
-            found.amount++;
-        }
-        else
-        {
-            inventoryItems.Add(item);
-        }
-    }
-    public List<Item> GetItemList()
-    {
-        return inventoryItems;
-    }
-    public void RemoveItem(Item item)
-    {
-        inventoryItems.Remove(item);
-    }
-
+        if(inventoryType == InventoryType.Market)
+            CreateItems();
+    } 
 }
 
