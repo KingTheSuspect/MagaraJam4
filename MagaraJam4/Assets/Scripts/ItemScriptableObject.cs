@@ -11,6 +11,6 @@ public class ItemScriptableObject:ScriptableObject
     public Sprite icon;
     public int energyAmount = -1;
     public float price = 0;
-    public int mutluluk= -1;
+    public int mutluluk;
 
 }

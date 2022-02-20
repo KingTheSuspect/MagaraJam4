@@ -10,10 +10,11 @@ public class InventoryItemController : MonoBehaviour,IPointerDownHandler
     YemekSistemi yemekSistemi;
     public static Item selectedItem;
     public Inventory inventory = null;
-    MutlulukSistemi mutluluksistemi;
+    MutlulukSistemi mutlulukSistemi;
     void Start()
     {
         yemekSistemi = FindObjectOfType<YemekSistemi>(true);
+        mutlulukSistemi = FindObjectOfType<MutlulukSistemi>(true);
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -27,7 +28,7 @@ public class InventoryItemController : MonoBehaviour,IPointerDownHandler
                 YemekSistemi.yemek = 100;
 
             GetComponentInParent<UI_Inventory>().RefreshItems(inventory);
-            mutluluksistemi.SetMutlulukSayar();
+            mutlulukSistemi.SetMutlulukSayar();
             yemekSistemi.SetYemekSayar();
         }
 
