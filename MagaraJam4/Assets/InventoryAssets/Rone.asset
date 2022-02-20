@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Rone
   m_EditorClassIdentifier: 
   itemType: 7
-  amount: 0
+  amount: 1
   icon: {fileID: 21300000, guid: a668f6148dfee9b4ab076036d93dda82, type: 3}
-  energyAmount: 20
-  price: 1
+  energyAmount: 5
+  price: 1.5
+  mutluluk: 13

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Dots
   m_EditorClassIdentifier: 
   itemType: 3
-  amount: 0
+  amount: 1
   icon: {fileID: 21300000, guid: 7511c153312042f4ea6a06a722e593a8, type: 3}
-  energyAmount: 15
-  price: 1
+  energyAmount: 10
+  price: 2
+  mutluluk: 8

@@ -10,9 +10,11 @@ public class InventoryItemController : MonoBehaviour,IPointerDownHandler
     YemekSistemi yemekSistemi;
     public static Item selectedItem;
     public Inventory inventory = null;
+    MutlulukSistemi mutlulukSistemi;
     void Start()
     {
         yemekSistemi = FindObjectOfType<YemekSistemi>(true);
+        mutlulukSistemi = FindObjectOfType<MutlulukSistemi>(true);
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -21,10 +23,12 @@ public class InventoryItemController : MonoBehaviour,IPointerDownHandler
         {
             item.amount -= 1;
             YemekSistemi.yemek += item.energyAmount;
+            MutlulukSistemi.mutluluk += item.mutluluk;
             if (YemekSistemi.yemek > 100)
                 YemekSistemi.yemek = 100;
 
             GetComponentInParent<UI_Inventory>().RefreshItems(inventory);
+            mutlulukSistemi.SetMutlulukSayar();
             yemekSistemi.SetYemekSayar();
         }
 

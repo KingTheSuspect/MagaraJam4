@@ -49,6 +49,7 @@ public class Inventory:MonoBehaviour
                 amount = sc.amount,
                 energyAmount = sc.energyAmount,
                 price = sc.price,
+                mutluluk = sc.mutluluk,
             };
             if (!usedItems.Contains(sc))
                 usedItems.Add(sc);

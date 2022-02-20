@@ -31,10 +31,9 @@ public class MarketBina : MonoBehaviour
     {
         if (marketInventoryUI.selectedItem != null)
         {
-
-            openBefore = false;
             if (Player.money >= marketInventoryUI.selectedItem.price)
             {
+                openBefore = false;
                 player.GetInventory().AddItem(marketInventoryUI.selectedItem);
             marketInventory.RemoveItem(marketInventoryUI.selectedItem);
             marketInventoryUI.RefreshItems(marketInventory);
