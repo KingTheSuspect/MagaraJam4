@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ffc3a21d9a882d4eaf0156412b5d304, type: 3}
   m_Name: Pizza
   m_EditorClassIdentifier: 
-  itemType: 3
-  amount: 10
+  itemType: 0
+  amount: 0
   icon: {fileID: 21300000, guid: a6115e5ad90168a4bac818c5d75155ba, type: 3}
-  energyAmount: 15
-  price: 0.5
+  energyAmount: 30
+  price: 2

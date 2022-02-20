@@ -9,14 +9,12 @@ public class UI_Inventory : MonoBehaviour
     private Transform itemSlotTemplete;
     List<RectTransform> canvasList = new List<RectTransform>();
     public Item selectedItem = null;
-    private void Awake()
-    {
-        itemSlotContainer = transform.Find("itemSlotContainer");
-        itemSlotTemplete = itemSlotContainer.Find("itemSlotTemplete");
-    }
  
     public void RefreshItems(Inventory inventory)
     {
+        itemSlotContainer = transform.Find("itemSlotContainer");
+        itemSlotTemplete = itemSlotContainer.Find("itemSlotTemplete");
+
         int x = 0;
         int y = 0;
         float itemSlotCellSize = 120f;
@@ -25,6 +23,7 @@ public class UI_Inventory : MonoBehaviour
             Destroy(canvasList[i].gameObject);
         }
         canvasList.Clear();
+        gameObject.SetActive(true);
         foreach (Item item in inventory.GetItemList())
         {
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplete, itemSlotContainer).GetComponent<RectTransform>();
