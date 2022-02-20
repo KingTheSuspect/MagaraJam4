@@ -35,6 +35,7 @@ public class BarinakBina : MonoBehaviour
         }
         else
         {
+            Time.timeScale = 1f;
             dinlen = true;
             StartCoroutine(LoadLevel());
             Barinak.SetActive(false);
@@ -74,7 +75,6 @@ public class BarinakBina : MonoBehaviour
     }
     public void Devam()
     {
-        Time.timeScale = 1f;
         StartCoroutine(LoadLevel2());
     }
     IEnumerator LoadLevel2()

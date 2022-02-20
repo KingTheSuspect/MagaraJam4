@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SaatSistemi : MonoBehaviour
 {
-    public static float saat = 14, dakika= 30;
+    public static float saat = 18, dakika= 30;
 
     public TextMeshProUGUI texts;
     public Animator animator;
