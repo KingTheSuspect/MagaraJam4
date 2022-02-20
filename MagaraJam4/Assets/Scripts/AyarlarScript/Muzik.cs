@@ -15,10 +15,9 @@ public class Muzik : MonoBehaviour
 
     public void SetAudio(float value)
     {
-
         AudioListener.volume = value;
-
         volumeAmount.text = ((int)(value * 100)).ToString();
+        SaveAudio();
     }
     private void SaveAudio()
     {
