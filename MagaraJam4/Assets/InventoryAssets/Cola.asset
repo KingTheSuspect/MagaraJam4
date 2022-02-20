@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Cola
   m_EditorClassIdentifier: 
   itemType: 1
-  amount: 0
+  amount: 1
   icon: {fileID: 21300000, guid: dc0240638ddc71c4a9797d9368125a7a, type: 3}
-  energyAmount: 5
-  price: 0.5
+  energyAmount: 4
+  price: 1
+  mutluluk: 5

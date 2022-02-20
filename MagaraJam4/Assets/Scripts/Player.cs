@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Animator animator;
 
     public static float hiz = 5;
     private float hAbs;
@@ -13,7 +14,7 @@ public class Player : MonoBehaviour
     private Inventory inventory;
     public TextMeshProUGUI parasayar;
 
-    public static double money = 1.27;
+    public static double money = 3.27;
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class Player : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal");
 
         hAbs = Mathf.Abs(h);
-
+        animator.SetFloat("Speed", hAbs);
         if (h > 0.1f)
         {
             transform.localScale = new Vector2(1, 1);

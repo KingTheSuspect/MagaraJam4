@@ -25,4 +25,5 @@ public class Item
     public ItemType itemType;
     public int energyAmount = -1;
     public float price = 0f;
+    public int mutluluk = -1;
 }

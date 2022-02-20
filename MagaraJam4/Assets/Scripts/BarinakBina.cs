@@ -9,8 +9,9 @@ public class BarinakBina : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject hata;
     public GameObject hata2;
+    public static bool dinlen;
 
-
+    public GameObject Gece;
     public GameObject Barinak;
     
 
@@ -34,11 +35,11 @@ public class BarinakBina : MonoBehaviour
         }
         else
         {
+            dinlen = true;
             StartCoroutine(LoadLevel());
             Time.timeScale = 1f;
-            hata.SetActive(false);
-            hata2.SetActive(false);
             Barinak.SetActive(false);
+
         }
 
     }
@@ -68,10 +69,24 @@ public class BarinakBina : MonoBehaviour
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(2);
         transition.SetTrigger("Start2");
+        Gece.SetActive(true);
+    }
+    public void Devam()
+    {
+        StartCoroutine(LoadLevel2());
+    }
+    IEnumerator LoadLevel2()
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(2);
+        transition.SetTrigger("Start2");
         GunSistemi.gun += 1;
         SaatSistemi.saat = 8;
         SaatSistemi.dakika = 30;
-        YemekSistemi.yemek += 20;
+        hata.SetActive(false);
+        hata2.SetActive(false);
+        Gece.SetActive(false);
+        dinlen = false;
 
     }
 }

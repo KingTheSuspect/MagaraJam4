@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: RedCowl
   m_EditorClassIdentifier: 
   itemType: 6
-  amount: 0
+  amount: 1
   icon: {fileID: 21300000, guid: 7e976fde9ea1e0840ac617c3aff268e3, type: 3}
-  energyAmount: 35
-  price: 2
+  energyAmount: 6
+  price: 1.7
+  mutluluk: 5
