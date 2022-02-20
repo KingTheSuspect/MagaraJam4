@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     float yHiz = 0;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float jumpDownSpeed = 15f;
+    [SerializeField] TMPro.TMP_Text dialogueText;
     void Start()
     {
         inventory = transform.GetComponent<Inventory>();
@@ -62,8 +63,33 @@ public class Player : MonoBehaviour
         if(!onTheGround)
             yHiz -= Time.deltaTime* jumpDownSpeed;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        dialogueText.color = new Color(dialogueText.color.r, dialogueText.color.g, dialogueText.color.b, 1f);
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Posters"))
+        {
+            dialogueText.text = collision.gameObject.GetComponent<PosterController>().GetText();
+            dialogueText.transform.parent.gameObject.SetActive(true);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Posters"))
+        {
+            StartCoroutine(TextFadeOut());
+        }
+    }
+    IEnumerator TextFadeOut()
+    {
+        while (dialogueText.color.a > 0)
+        {
+            Color tempColor = dialogueText.color;
+            dialogueText.color = new Color(tempColor.r,tempColor.g,tempColor.b,tempColor.a-.1f);
+            yield return new WaitForSeconds(.05f);
+        }
+        dialogueText.transform.parent.gameObject.SetActive(false);
 
-
+    }
 
 }
 
