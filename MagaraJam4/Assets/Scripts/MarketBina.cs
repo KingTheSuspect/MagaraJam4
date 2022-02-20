@@ -31,8 +31,11 @@ public class MarketBina : MonoBehaviour
     {
         if (marketInventoryUI.selectedItem != null)
         {
+
             openBefore = false;
-            player.GetInventory().AddItem(marketInventoryUI.selectedItem);
+            if (Player.money >= marketInventoryUI.selectedItem.price)
+            {
+                player.GetInventory().AddItem(marketInventoryUI.selectedItem);
             marketInventory.RemoveItem(marketInventoryUI.selectedItem);
             marketInventoryUI.RefreshItems(marketInventory);
             if (player.uiInventory.gameObject.activeInHierarchy)
@@ -40,10 +43,16 @@ public class MarketBina : MonoBehaviour
 
             if (!openBefore)
                 player.uiInventory.gameObject.SetActive(true);
-
-            player.uiInventory.RefreshItems(player.GetInventory());
-            Player.money -= marketInventoryUI.selectedItem.price;
-            marketInventoryUI.selectedItem = null;
+           
+                
+                player.uiInventory.RefreshItems(player.GetInventory());
+                Player.money -= marketInventoryUI.selectedItem.price;
+                marketInventoryUI.selectedItem = null;
+            }
+            else
+            {
+                hata.SetActive(true);
+            }
         }
         //if(!openBefore)
         //player.uiInventory.gameObject.SetActive(false);

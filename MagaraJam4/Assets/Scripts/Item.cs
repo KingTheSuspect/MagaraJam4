@@ -9,7 +9,15 @@ public class Item
     {
         Food_Pizza,
         Food_Cola,
-
+        Food_Days,
+        Food_Dots,
+        Food_Mart,
+        Food_Puddies,
+        Food_Redcowl,
+        Food_Rone,
+        Food_Tepsi,
+        Food_Cay,
+        Food_Burger,
     }
 
     public Sprite inventoryIcon;

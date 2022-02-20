@@ -47,7 +47,6 @@ public class PauseMenu : MonoBehaviour
             pauseMenuInventory.RefreshItems(playerInventory);
             sayac++;
         }
-        Debug.Log(sayac);
     }
 
     public void LoadMenu()
