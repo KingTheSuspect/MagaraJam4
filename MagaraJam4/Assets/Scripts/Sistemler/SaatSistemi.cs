@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,7 +15,7 @@ public class SaatSistemi : MonoBehaviour
     public GameObject Gece;
     public GameObject devam;
 
-
+    public static event EventHandler MarketYenile;
     private void FixedUpdate()
     {
         texts.text = ""+saat.ToString("00")+":"+dakika.ToString("00");
@@ -59,6 +60,7 @@ public class SaatSistemi : MonoBehaviour
         SaatSistemi.saat = 8;
         SaatSistemi.dakika = 30;
         ilk = true;
+        MarketYenile?.Invoke(this,EventArgs.Empty);
     }
     public void Devam()
     {
