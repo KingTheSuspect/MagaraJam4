@@ -6,17 +6,42 @@ using UnityEngine.EventSystems;
 
 public class InventoryItemController : MonoBehaviour,IPointerDownHandler
 {
+    [SerializeField] ItemScriptableObject itemInstance;
     Item item;
     YemekSistemi yemekSistemi;
     public static Item selectedItem;
-    public Inventory inventory = null;
+    [HideInInspector] public Inventory inventory = null;
     MutlulukSistemi mutlulukSistemi;
+    Player player=null;
     void Start()
     {
         yemekSistemi = FindObjectOfType<YemekSistemi>(true);
         mutlulukSistemi = FindObjectOfType<MutlulukSistemi>(true);
-    }
+        if(itemInstance != null)
+        {
+            item = new Item
+            {
+                inventoryIcon = itemInstance.icon,
+                itemType = itemInstance.itemType,
+                amount = itemInstance.amount,
+                energyAmount = itemInstance.energyAmount,
+                price = itemInstance.price,
+                mutluluk = itemInstance.mutluluk,
+            };
+        }
 
+    }
+    void Update()
+    {
+        if (player == null)
+        {
+            player = FindObjectOfType<Player>();
+            if (item.itemType == Item.ItemType.Trash)
+            {
+                inventory = player.GetInventory();
+            }
+        }
+    }
     public void OnPointerDown(PointerEventData eventData)
     {
         if (item.amount > 0 && YemekSistemi.yemek<100 && Enum.GetName(typeof(Item.ItemType),item.itemType).Contains("Food") && inventory.inventoryType == Inventory.InventoryType.Player)
@@ -36,12 +61,17 @@ public class InventoryItemController : MonoBehaviour,IPointerDownHandler
             if (item.amount == 0)
                 inventory.RemoveItem(item);
             GetComponentInParent<UI_Inventory>().RefreshItems(inventory);
-
         }
 
         if (inventory.inventoryType == Inventory.InventoryType.Market)
         {
             GetComponentInParent<UI_Inventory>().selectedItem = item;
+        }
+        if(item.itemType == Item.ItemType.Trash && Vector2.Distance(transform.position,player.transform.position)<player.itemGetDistance)  // Calculate Distance
+        {
+            player.GetInventory().AddItem(item);
+            player.uiInventory.RefreshItems(player.GetInventory());
+            Destroy(gameObject);
         }
     }
 

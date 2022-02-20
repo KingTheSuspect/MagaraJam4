@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI parasayar;
 
     public static double money = 3.27;
-
+    public float itemGetDistance = 5f;
     void Start()
     {
         inventory = transform.GetComponent<Inventory>();
