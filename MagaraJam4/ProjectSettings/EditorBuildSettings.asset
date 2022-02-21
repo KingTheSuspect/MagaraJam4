@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/BaslangicSahne.unity
     guid: 1eb23846595fab64294a1f6b58436979
   - enabled: 1
+    path: Assets/Scenes/Sozler.unity
+    guid: 57c6d3da48e0e8844bfc45fc495b2dc9
+  - enabled: 1
     path: Assets/Scenes/Oyun.unity
     guid: 60497bf7dcfb9e14dae0c7e9a672b64c
   - enabled: 1

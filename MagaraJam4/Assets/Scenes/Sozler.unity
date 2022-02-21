@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: 27}
+  m_AnchoredPosition: {x: 6, y: -135}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &205175539
@@ -181,12 +181,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'mAGARA jAM #4 icin
-
-    72 saatte yapilmistir'
+  m_text: "\" Gercek hayat beni o kadar uzuyordu ki gerceklikten \r\nkurtulabilmek
+    icin kendime bir guc buldum. \r\nSuper bir guc... \""
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b213ddef21b928a4b9b23835d62895db, type: 2}
-  m_sharedMaterial: {fileID: -6787659905678758182, guid: b213ddef21b928a4b9b23835d62895db, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b2548ad1a8820f74ab07bf500fafc45f, type: 2}
+  m_sharedMaterial: {fileID: -5956921563247805580, guid: b2548ad1a8820f74ab07bf500fafc45f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -210,8 +209,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -246,7 +245,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -7.3639526, y: 0, z: -13.428406, w: 0}
+  m_margin: {x: -54.579918, y: -57.61224, z: -77.105095, w: -61.077644}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -389,7 +388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 845465215}
-  sure: 3
+  sure: 4
   scene: 5
 --- !u!1 &845465214
 GameObject:
@@ -410,7 +409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &845465215
 Animator:
   serializedVersion: 4
