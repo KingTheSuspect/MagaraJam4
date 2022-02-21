@@ -5,8 +5,8 @@ using UnityEngine;
 public class GunlukMaksGorev : MonoBehaviour
 {
     public static int maksgorev = 0;
-    public static int durum;
-    public static bool karakterlock;
+    public static int durum = 0;
+    public static bool karakterlock = false;
     private bool kilit1;
     private bool kilit2;
     private bool kilit3;
@@ -16,15 +16,10 @@ public class GunlukMaksGorev : MonoBehaviour
     {
         if (kilit1 == false)
         {
-            switch (checker.karakter1)
+            if (checker.karakter1 == true)
             {
-                case true:
-                    durum++;
-                    kilit1 = true;
-                    break;
-                default:
-                    break;
-
+                durum++;
+                kilit1 = true;
             }
         }
         if (kilit2 == false)
@@ -64,7 +59,7 @@ public class GunlukMaksGorev : MonoBehaviour
                     break;
             }
         }
-        if (maksgorev == durum)
+        if (durum == maksgorev)
         {
             karakterlock = true;
         }
@@ -72,7 +67,8 @@ public class GunlukMaksGorev : MonoBehaviour
         {
             karakterlock = false;
         }
-        GunSistemi.gun = maksgorev;
+        maksgorev = GunSistemi.gun;
+
 
     }
 }
