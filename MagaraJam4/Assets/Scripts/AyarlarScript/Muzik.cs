@@ -10,10 +10,10 @@ public class Muzik : MonoBehaviour
 
     private void Start()
     {
-        LoadAudio();
+        //LoadAudio();
     }
 
-    public void SetAudio(float value)
+    /*public void SetAudio(float value)
     {
         AudioListener.volume = value;
         volumeAmount.text = ((int)(value * 100)).ToString();
@@ -37,5 +37,5 @@ public class Muzik : MonoBehaviour
             slider.value = PlayerPrefs.GetFloat("audiVolume");
         }
         
-    }
+    }*/
 }

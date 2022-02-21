@@ -16,6 +16,6 @@ public class BaslangicScript : MonoBehaviour
     {
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(4);
     }
 }

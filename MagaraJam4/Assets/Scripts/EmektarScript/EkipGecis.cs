@@ -6,6 +6,6 @@ public class EkipGecis : MonoBehaviour
 {
     public void LoadScene()
     {
-        SceneManager.LoadScene("Emektarlar");
+        SceneManager.LoadScene(4);
     }
 }
