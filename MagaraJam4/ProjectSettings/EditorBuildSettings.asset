@@ -41,4 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TasKagitMakas.unity
     guid: 96704b512ee9431428ffcbae839e1ad6
+  - enabled: 1
+    path: Assets/Scenes/Son.unity
+    guid: 21a6cd33a3ed28f47a799ad8caead3f2
+  - enabled: 1
+    path: Assets/Scenes/adam.unity
+    guid: 6880eeb93a337eb4fa16248a835071b4
   m_configObjects: {}

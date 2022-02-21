@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class AraGecis3 : MonoBehaviour
+public class insanson : MonoBehaviour
 {
     public Animator transition;
     public int sahne;
@@ -21,7 +21,7 @@ public class AraGecis3 : MonoBehaviour
         {
             return;
         }
-       
+
 
     }
     IEnumerator LoadLevel()
@@ -29,6 +29,6 @@ public class AraGecis3 : MonoBehaviour
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(sahne);
-        checker.karakter1 = true;
+        checker.karakter4 = true;
     }
 }
