@@ -18,6 +18,7 @@ public class Item
         Food_Tepsi,
         Food_Cay,
         Food_Burger,
+        Trash,
     }
 
     public Sprite inventoryIcon;

@@ -22,6 +22,7 @@ public class Inventory:MonoBehaviour
         inventoryItems = new List<Item>();
         CreateItems();
         SaatSistemi.MarketYenile += OnDayPassed;
+        BarinakBina.MarketYenile += OnDayPassed;
     }
     public void AddItem(Item item)
     {

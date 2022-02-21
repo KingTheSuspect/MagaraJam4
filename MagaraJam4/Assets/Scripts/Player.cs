@@ -15,7 +15,12 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI parasayar;
 
     public static double money = 3.27;
-
+    public float itemGetDistance = 5f;
+    bool onTheGround = false;
+    float yHiz = 0;
+    [SerializeField] float jumpSpeed = 5f;
+    [SerializeField] float jumpDownSpeed = 15f;
+    [SerializeField] TMPro.TMP_Text dialogueText;
     void Start()
     {
         inventory = transform.GetComponent<Inventory>();
@@ -28,25 +33,63 @@ public class Player : MonoBehaviour
     void Update()
     {
         float h = Input.GetAxisRaw("Horizontal");
-
+        onTheGround = Physics2D.Raycast(transform.position, Vector3.down, 1.5f,LayerMask.GetMask("Ground"));
+        if (Input.GetKeyDown(KeyCode.Space) && onTheGround)
+        {
+            onTheGround = false;
+            yHiz += jumpSpeed;
+        }
+        if (onTheGround)
+            yHiz = 0;
         hAbs = Mathf.Abs(h);
         animator.SetFloat("Speed", hAbs);
         if (h > 0.1f)
         {
             transform.localScale = new Vector2(1, 1);
-            transform.Translate(h * hiz * Time.deltaTime, 0, 0);
+            transform.Translate(h * hiz * Time.deltaTime, yHiz * hiz * Time.deltaTime, 0);
 
         }
         if (h < -0.1f)
         {
             transform.localScale = new Vector2(-1, 1);
-            transform.Translate(h * hiz * Time.deltaTime, 0, 0);
+            transform.Translate(h * hiz * Time.deltaTime, yHiz * hiz*Time.deltaTime, 0);
         }
-        parasayar.text = "$" + money.ToString("0.00"); ;
+        if(h ==0)
+        {
+            transform.Translate(h * hiz * Time.deltaTime, yHiz * hiz * Time.deltaTime, 0);
+        }
+        parasayar.text = "$" + money.ToString("0.00");
+
+        if(!onTheGround)
+            yHiz -= Time.deltaTime* jumpDownSpeed;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        dialogueText.color = new Color(dialogueText.color.r, dialogueText.color.g, dialogueText.color.b, 1f);
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Posters"))
+        {
+            dialogueText.text = collision.gameObject.GetComponent<PosterController>().GetText();
+            dialogueText.transform.parent.gameObject.SetActive(true);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Posters"))
+        {
+            StartCoroutine(TextFadeOut());
+        }
+    }
+    IEnumerator TextFadeOut()
+    {
+        while (dialogueText.color.a > 0)
+        {
+            Color tempColor = dialogueText.color;
+            dialogueText.color = new Color(tempColor.r,tempColor.g,tempColor.b,tempColor.a-.1f);
+            yield return new WaitForSeconds(.05f);
+        }
+        dialogueText.transform.parent.gameObject.SetActive(false);
 
     }
-
-
 
 }
 

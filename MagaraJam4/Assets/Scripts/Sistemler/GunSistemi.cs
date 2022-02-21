@@ -10,9 +10,11 @@ public class GunSistemi : MonoBehaviour
     public static int gun = 1;
 
 
+
     private void FixedUpdate()
     {
         gunsayar.text = "Gun " + gun;
+
 
     }
 }

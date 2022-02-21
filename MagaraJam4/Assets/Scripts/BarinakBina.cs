@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,8 @@ public class BarinakBina : MonoBehaviour
 
     public GameObject Gece;
     public GameObject Barinak;
-    
+    public static event EventHandler MarketYenile;
+
 
     void Update()
     {
@@ -89,6 +91,7 @@ public class BarinakBina : MonoBehaviour
         hata2.SetActive(false);
         Gece.SetActive(false);
         dinlen = false;
+        MarketYenile?.Invoke(this, EventArgs.Empty);
 
     }
 }

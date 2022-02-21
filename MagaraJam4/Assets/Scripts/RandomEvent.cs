@@ -39,7 +39,7 @@ public class RandomEvent : MonoBehaviour
             Randoms();
             if (GunSistemi.gun == 1 && ilk == true)
             {
-                hikaye.text = "Bugün oldukça soðuk bir gün, ýsýnman biraz zaman alacak gibi görünüyor. Bir süre sonra yanýna bir kedi yavrusu geldi o da üþümüþ görünüyor.";
+                hikaye.text = "Bugün oldukça soðuk bir gün, ýsýnman biraz zaman alacak gibi görünüyor. Bir süre sonra yanýna bir kedi geldi o da üþümüþ görünüyor.";
                 secenek1.SetActive(true);
                 secenek2.SetActive(true);
                 ilk = false;
@@ -49,16 +49,20 @@ public class RandomEvent : MonoBehaviour
             {
                 Time.timeScale = 1f;
                 tik = true;
-                hikaye.text = "Kedi yanýna yaklaþýk sana kendini sevdirdi\n Ýnsanlýk seviyen 10 yükseldi";
+                hikaye.text = "Kedi yanýna yaklaþýp sana kendini sevdirdi";
                 InsanlikSistemi.insanlik += 10;
+                secenek1.SetActive(false);
+                secenek2.SetActive(false);
                 StartCoroutine(LoadLevel());
             }
             if (deger == 2 && tik == false)
             {
                 Time.timeScale = 1f;
                 tik = true;
-                hikaye.text = "Kedi baþka bir evsizin yanýna gitmeye çalýþýrken ezildi\n Ýnsanlýk seviyen 10 düþtü";
+                hikaye.text = "Kedi baþka bir evsizin yanýna gitmeye çalýþýrken yeni gelen bir evsiz, kedinin üzerine bastý";
                 InsanlikSistemi.insanlik -= 10;
+                secenek1.SetActive(false);
+                secenek2.SetActive(false);
                 StartCoroutine(LoadLevel());
 
             }
@@ -72,14 +76,17 @@ public class RandomEvent : MonoBehaviour
                         hikaye.text = "Tam yatmak üzereyken küçük bir çocuk sana doðru geldi ve yemen için bir parça ekmek verdi.";
                         YemekSistemi.yemek += 20;
                         alindi = true;
+                        devam.SetActive(true);
                         break;
                     case 2:
                         hikaye.text = "Geçmini hatýrlamaya çalýþýyorsun ama olmuyor, koca bir boþluk gibi";
                         alindi = true;
+                        devam.SetActive(true);
                         break;
                     case 3:
                         hikaye.text = "Bu gece pek yatamýyorsun, aklýna sürekli bir zamanlar yanýnda olabildiðin ailen geliyor. Bir yandan özlediðin bu zamanlar diðer yandan kabusun olmuþ durumda...";
                         alindi = true;
+                        devam.SetActive(true);
                         break;
 
 
@@ -100,10 +107,6 @@ public class RandomEvent : MonoBehaviour
 
 
         }
-    }
-    public void Devam()
-    {
-
     }
     public void Secenek1()
     {
