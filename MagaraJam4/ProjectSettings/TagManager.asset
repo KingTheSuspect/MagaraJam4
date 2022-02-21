@@ -11,6 +11,7 @@ TagManager:
   - huzur
   - iyilik
   - gercek
+  - kutu
   layers:
   - Default
   - TransparentFX
