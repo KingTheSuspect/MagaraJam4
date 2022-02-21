@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class HurdaSatis : MonoBehaviour
     Item item;
     Player player = null;
     private bool triggered;
+    [HideInInspector] public Inventory inventory = null;
     public GameObject hurda;
     // Start is called before the first frame update
     void Start()
@@ -22,12 +24,21 @@ public class HurdaSatis : MonoBehaviour
             Time.timeScale = 0f;
             hurda.SetActive(true);
         }
+        if (player == null)
+        {
+            player = FindObjectOfType<Player>();
+            if (item.itemType == Item.ItemType.Trash)
+            {
+                inventory = player.GetInventory();
+            }
+        }
     }
 
-    public void Sat()
+    public void Satis()
     {
-        if (item.itemType == Item.ItemType.Trash)
+        if (item.amount > 0 && Enum.GetName(typeof(Item.ItemType), item.itemType).Contains("Trash") && inventory.inventoryType == Inventory.InventoryType.Player)
         {
+            item.amount -= item.amount;
             player.GetInventory().RemoveItem(item);
             player.uiInventory.RefreshItems(player.GetInventory());
         }
