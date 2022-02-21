@@ -10043,6 +10043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f538f3aadc65546a20b08fc5c14df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hurda: {fileID: 0}
 --- !u!1 &1167677029
 GameObject:
   m_ObjectHideFlags: 0
@@ -15615,6 +15616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2115202390}
   - component: {fileID: 2115202389}
+  - component: {fileID: 2115202391}
   m_Layer: 0
   m_Name: bulding1
   m_TagString: Untagged
@@ -15689,6 +15691,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2115202391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115202388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f538f3aadc65546a20b08fc5c14df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hurda: {fileID: 1903836292}
 --- !u!1 &2120292109
 GameObject:
   m_ObjectHideFlags: 0
