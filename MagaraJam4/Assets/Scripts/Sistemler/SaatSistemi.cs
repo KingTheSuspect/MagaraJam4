@@ -14,7 +14,6 @@ public class SaatSistemi : MonoBehaviour
     private bool ilk = true;
     public GameObject Gece;
     public GameObject devam;
-
     public static event EventHandler MarketYenile;
     private void FixedUpdate()
     {
@@ -60,7 +59,7 @@ public class SaatSistemi : MonoBehaviour
         SaatSistemi.saat = 8;
         SaatSistemi.dakika = 30;
         ilk = true;
-        MarketYenile?.Invoke(this,EventArgs.Empty);
+        MarketYenile?.Invoke(this, EventArgs.Empty);
     }
     public void Devam()
     {
