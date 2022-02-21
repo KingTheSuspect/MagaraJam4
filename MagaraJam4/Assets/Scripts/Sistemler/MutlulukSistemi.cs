@@ -25,7 +25,7 @@ public class MutlulukSistemi : MonoBehaviour
     {
         mutluluksayar.text = "%" + mutluluk;
         saat += Time.deltaTime;
-        if (saat >= 18)
+        if (saat >= 36)
         {
             Randomsayi();
             mutluluk -= random;

@@ -890,10 +890,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Yerlerden cop toplay\u0131p, hurdac\u0131ya sat\u0131p para kazanabilirsin.\n\nBar\u0131naklarda
-    kalarak, gece olu\u015Fabilecek tehlikelerden kurtulabilirsin.\n\nEtraftaki objelerle
-    etkilesime gecerek hikayeyi ilerletebilirsin.\n\nMarketlerden e\u015Fya ve yemek
-    alabilirsin.\n\nMutlulugun tamamen t\xFCkenirse, \xF6l\xFCrsun.\n\n\n"
+  m_text: "Yerlerden cop toplay\u0131p, hurdac\u0131ya sat\u0131p para kazanabilirsin.\n\n
+    Etrafta gorecegin insanlarla etkilesim kurarak onlarla oyun\r\noynayabilirsin.\n\nEtraftaki
+    poster, gazete ve afi\u015Flere bakabilirsin.\n\nMutlulugun tamamen t\xFCkenirse,
+    \xF6l\xFCrsun.\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b2548ad1a8820f74ab07bf500fafc45f, type: 2}
   m_sharedMaterial: {fileID: -5956921563247805580, guid: b2548ad1a8820f74ab07bf500fafc45f, type: 2}
@@ -920,8 +920,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34
-  m_fontSizeBase: 34
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

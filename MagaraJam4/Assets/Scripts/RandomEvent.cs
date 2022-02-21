@@ -13,13 +13,14 @@ public class RandomEvent : MonoBehaviour
     public GameObject secenek2;
     private int deger;
     private bool ilk = true;
-    private bool alindi = true;
+    private bool alindi = false;
     private bool tik = false;
     private BarinakBina barinak;
 
     void Start()
     {
         barinak = FindObjectOfType<BarinakBina>(true);
+        Randoms();
     }
 
 
@@ -36,7 +37,7 @@ public class RandomEvent : MonoBehaviour
     {
         if (BarinakBina.dinlen == true)
         {
-            Randoms();
+           
             if (GunSistemi.gun == 1 && ilk == true)
             {
                 hikaye.text = "Bugün oldukça soðuk bir gün, ýsýnman biraz zaman alacak gibi görünüyor. Bir süre sonra yanýna bir kedi geldi o da üþümüþ görünüyor.";
@@ -66,9 +67,10 @@ public class RandomEvent : MonoBehaviour
                 StartCoroutine(LoadLevel());
 
             }
-            else if (GunSistemi.gun > 1 && alindi == false)
-            {
 
+            if (GunSistemi.gun > 1 && alindi == false)
+            {
+                
                 switch (random)
                 {
                     default:
@@ -92,21 +94,30 @@ public class RandomEvent : MonoBehaviour
 
                 }
             }
-            if (SaatSistemi.disarda == true)
-            {
-                Randoms2();
-                switch (random2)
-                {
-                    case 1:
-                        hikaye.text = "Þehrin tamamen alakasýz bir yerinde, sokakta yürürken ayaðýn bir taþa takýldý ve burkuldu. Ayaðýný biraz daha zorladýn fakat daha fazla yürüyemiyorsun. Hiç bilmediðin bir yerde bu soðukta yatmak zorunda kaldýn.";
-                        break;
-                    default:
-                        break;
-                }
-            }
+
 
 
         }
+        if (SaatSistemi.disarda == true)
+        {
+            Randoms2();
+            switch (random2)
+            {
+                case 1:
+                    hikaye.text = "Þehrin tamamen alakasýz bir yerinde, sokakta yürürken ayaðýn bir taþa takýldý ve burkuldu. Ayaðýný biraz daha zorladýn fakat daha fazla yürüyemiyorsun. Hiç bilmediðin bir yerde bu soðukta yatmak zorunda kaldýn.";
+                    devam.SetActive(true);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    public void Devam()
+    {
+        Time.timeScale = 1f;
+        barinak.Devam();
+        devam.SetActive(false);
+
     }
     public void Secenek1()
     {
@@ -120,6 +131,12 @@ public class RandomEvent : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         barinak.Devam();
+    }
+    IEnumerator LoadLevel2()
+    {
+        yield return new WaitForSeconds(5);
+        alindi = false;
+        Randoms();
     }
 }
 
