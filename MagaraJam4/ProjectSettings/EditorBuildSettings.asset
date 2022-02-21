@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Ayarlar.unity
     guid: 767fbd016c69a7e42aac038df4f132ba
   - enabled: 1
+    path: Assets/Scenes/DragAndDrop.unity
+    guid: b13fd0e53183c7447ba4550929cb558b
+  - enabled: 1
     path: Assets/Scenes/Emektarlar.unity
     guid: 808007b65e34f2d4e81b7d6879e54893
   m_configObjects: {}

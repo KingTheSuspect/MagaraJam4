@@ -890,8 +890,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Yerlerden cop toplay\u0131p, hurdac\u0131ya sat\u0131p para kazanabilirsin.\n\n
-    Etrafta gorecegin insanlarla etkilesim kurarak onlarla oyun\r\noynayabilirsin.\n\nEtraftaki
+  m_text: "Yerlerden cop toplay\u0131p, hurdac\u0131ya sat\u0131p para kazanabilirsin.\n\nEtrafta
+    gorecegin insanlarla etkilesim kurarak onlarla oyun\r\noynayabilirsin.\n\nEtraftaki
     poster, gazete ve afi\u015Flere bakabilirsin.\n\nMutlulugun tamamen t\xFCkenirse,
     \xF6l\xFCrsun.\n\n\n"
   m_isRightToLeft: 0
