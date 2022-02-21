@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class checker : MonoBehaviour
 {
     public Animator transition;
-    private karakterid karakterid;
     public static bool karakter1 = false;
     public static bool karakter2 = false;
     public static bool karakter3 = false;

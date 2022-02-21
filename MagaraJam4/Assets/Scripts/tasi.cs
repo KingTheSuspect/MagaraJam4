@@ -42,6 +42,7 @@ public class tasi : MonoBehaviour
                     {
                         transform.position = kutu.transform.position;
                         yonet.sayi_artir();
+                        this.enabled = false;
                     }
                     else
                     {
