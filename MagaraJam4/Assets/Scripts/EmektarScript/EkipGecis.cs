@@ -6,6 +6,6 @@ public class EkipGecis : MonoBehaviour
 {
     public void LoadScene()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(8);
     }
 }

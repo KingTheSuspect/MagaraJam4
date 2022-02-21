@@ -8,6 +8,7 @@ public class tasi : MonoBehaviour
     Camera kamera;
     Vector2 baslangic_pozisyonu;
     GameObject[] kutu_dizisi;
+    public eventdizi yonet;
 
     private void OnMouseDrag()
     {
@@ -23,6 +24,7 @@ public class tasi : MonoBehaviour
         baslangic_pozisyonu = transform.position;
 
         kutu_dizisi = GameObject.FindGameObjectsWithTag("kutu");
+        //yonet = GameObject.Find("Manager").GetComponent<manager>();
     }
 
    
@@ -39,6 +41,8 @@ public class tasi : MonoBehaviour
                     if(mesafe <=1 )
                     {
                         transform.position = kutu.transform.position;
+                        yonet.sayi_artir();
+                        this.enabled = false;
                     }
                     else
                     {

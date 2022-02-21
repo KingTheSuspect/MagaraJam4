@@ -21,7 +21,7 @@ public class YemekSistemi : MonoBehaviour
     {
         yemeksayar.text = "%" + yemek;
         saat += Time.deltaTime;
-        if (saat >= 10)
+        if (saat >= 20)
         {
             Randomsayi();
             yemek -= random;

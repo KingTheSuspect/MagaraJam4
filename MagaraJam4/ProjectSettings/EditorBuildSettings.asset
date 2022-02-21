@@ -27,6 +27,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Ayarlar.unity
     guid: 767fbd016c69a7e42aac038df4f132ba
   - enabled: 1
+    path: Assets/Scenes/DragAndDrop.unity
+    guid: b13fd0e53183c7447ba4550929cb558b
+  - enabled: 1
     path: Assets/Scenes/Emektarlar.unity
     guid: 808007b65e34f2d4e81b7d6879e54893
+  - enabled: 1
+    path: Assets/Scenes/Puzzle/PuzzleHeykel.unity
+    guid: 9f17e478d0e4aaa4ca67d40420bfa00b
+  - enabled: 1
+    path: Assets/Scenes/Puzzle/PuzzleKagit.unity
+    guid: 77dacd9822e465541b90e21836363b53
+  - enabled: 1
+    path: Assets/Scenes/TasKagitMakas.unity
+    guid: 96704b512ee9431428ffcbae839e1ad6
+  - enabled: 1
+    path: Assets/Scenes/Son.unity
+    guid: 21a6cd33a3ed28f47a799ad8caead3f2
+  - enabled: 1
+    path: Assets/Scenes/adam.unity
+    guid: 6880eeb93a337eb4fa16248a835071b4
   m_configObjects: {}
