@@ -8,7 +8,7 @@ public class EmektarGecis : MonoBehaviour
     public void LoadScene()
     {
 
-        SceneManager.LoadScene("Ayarlar");
+        SceneManager.LoadScene(3);
 
     }
 
