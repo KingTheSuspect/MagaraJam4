@@ -7,7 +7,7 @@ public class GunSistemi : MonoBehaviour
 {
     public TextMeshProUGUI gunsayar;
 
-    public static int gun = 2;
+    public static int gun = 1;
 
 
 

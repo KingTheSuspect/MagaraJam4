@@ -7,6 +7,9 @@ public class WaitBeforeScene : MonoBehaviour
 {
     public Animator adam;
     public Animator fade;
+    public AudioSource haraket;
+    public AudioSource icme;
+
     private void Start()
     {
         StartCoroutine(LoadLevel());
@@ -15,9 +18,17 @@ public class WaitBeforeScene : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         adam.Play("Drink");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         fade.SetTrigger("Start");
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(5);
+    }
+    public void hareketses()
+    {
+        haraket.Play();
+    }
+    public void icmeses()
+    {
+        icme.Play();
     }
 }

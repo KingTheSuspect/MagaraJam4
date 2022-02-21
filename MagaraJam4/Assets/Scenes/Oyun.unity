@@ -4944,6 +4944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47c458ff92e55e848a9f9bda5271d918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transition: {fileID: 729785206}
   karater1: {fileID: 924668133}
   karater2: {fileID: 284229030}
   karater3: {fileID: 238891826}
