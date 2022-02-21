@@ -8,6 +8,7 @@ public class KartOyunu : MonoBehaviour
     private bool triggered;
     public int scene;
     public Animator transition;
+    private int currentscene;
     IEnumerator LoadLevel()
         
     {
@@ -32,6 +33,8 @@ public class KartOyunu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && triggered == true)
         {
             StartCoroutine(LoadLevel());
+            currentscene = SceneManager.GetActiveScene().buildIndex;
+            PlayerPrefs.SetInt("Saved", currentscene);
         }
     }
 }
