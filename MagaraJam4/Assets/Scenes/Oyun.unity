@@ -2419,8 +2419,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MarketBina, Assembly-CSharp
+      - m_Target: {fileID: 1166358145}
+        m_TargetAssemblyTypeName: HurdaSatis, Assembly-CSharp
         m_MethodName: Ayril
         m_Mode: 1
         m_Arguments:
@@ -5120,7 +5120,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Devam Et
+  m_text: Kediyi Sev
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b213ddef21b928a4b9b23835d62895db, type: 2}
   m_sharedMaterial: {fileID: -6787659905678758182, guid: b213ddef21b928a4b9b23835d62895db, type: 2}
@@ -10043,7 +10043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f538f3aadc65546a20b08fc5c14df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hurda: {fileID: 0}
+  hurda: {fileID: 1903836292}
 --- !u!1 &1167677029
 GameObject:
   m_ObjectHideFlags: 0
@@ -10706,7 +10706,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Devam Et
+  m_text: Kendi Haline Birak
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b213ddef21b928a4b9b23835d62895db, type: 2}
   m_sharedMaterial: {fileID: -6787659905678758182, guid: b213ddef21b928a4b9b23835d62895db, type: 2}
@@ -15617,6 +15617,7 @@ GameObject:
   - component: {fileID: 2115202390}
   - component: {fileID: 2115202389}
   - component: {fileID: 2115202391}
+  - component: {fileID: 2115202392}
   m_Layer: 0
   m_Name: bulding1
   m_TagString: Untagged
@@ -15704,6 +15705,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hurda: {fileID: 1903836292}
+--- !u!61 &2115202392
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115202388}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.008333, y: 5.633333}
+    newSize: {x: 8.008333, y: 5.633333}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.008333, y: 5.633333}
+  m_EdgeRadius: 0
 --- !u!1 &2120292109
 GameObject:
   m_ObjectHideFlags: 0

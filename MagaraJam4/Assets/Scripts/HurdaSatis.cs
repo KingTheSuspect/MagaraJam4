@@ -46,7 +46,7 @@ public class HurdaSatis : MonoBehaviour
     {
         triggered = true;
     }
-    private void OnTriggerExit2D(Collider other)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         triggered = false;
     }
