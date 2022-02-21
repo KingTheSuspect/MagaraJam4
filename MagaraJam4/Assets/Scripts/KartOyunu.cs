@@ -30,11 +30,15 @@ public class KartOyunu : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && triggered == true)
+        if (GunlukMaksGorev.karakterlock == false)
         {
-            StartCoroutine(LoadLevel());
-            currentscene = SceneManager.GetActiveScene().buildIndex;
-            PlayerPrefs.SetInt("Saved", currentscene);
+            if (Input.GetKeyDown(KeyCode.E) && triggered == true)
+            {
+                StartCoroutine(LoadLevel());
+                currentscene = SceneManager.GetActiveScene().buildIndex;
+                PlayerPrefs.SetInt("Saved", currentscene);
+            }
         }
+
     }
 }

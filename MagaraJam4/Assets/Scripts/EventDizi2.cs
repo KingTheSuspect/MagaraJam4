@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EventDizi2 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Animator fade;
+    int yerlestirilen_parca = 0;
+    int toplam_puzzle = 4;
+    public void sayi_artir()
     {
-        
+        yerlestirilen_parca++;
+        if (yerlestirilen_parca == toplam_puzzle)
+        {
+            StartCoroutine(LoadLevel());
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    IEnumerator LoadLevel()
     {
-        
+        fade.SetTrigger("Start");
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(13);
+        checker.karakter3 = true;
     }
 }

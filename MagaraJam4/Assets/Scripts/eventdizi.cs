@@ -22,6 +22,5 @@ public class eventdizi : MonoBehaviour
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(13);
         checker.karakter2 = true;
-        checker.karakter3 = true;
     }
 }

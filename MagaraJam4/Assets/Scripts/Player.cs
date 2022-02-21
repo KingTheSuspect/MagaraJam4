@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     public static float hiz = 5;
     private float hAbs;
     public UI_Inventory uiInventory;
-
     private Inventory inventory;
     public TextMeshProUGUI parasayar;
 
@@ -29,7 +28,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         float h = Input.GetAxisRaw("Horizontal");
-       
         hAbs = Mathf.Abs(h);
         animator.SetFloat("Speed", hAbs);
         if (h > 0.1f)

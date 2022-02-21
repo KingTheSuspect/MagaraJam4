@@ -15,6 +15,7 @@ public class GunSistemi : MonoBehaviour
     {
         gunsayar.text = "Gun " + gun;
 
-
+        Debug.Log(gun);
     }
+   
 }
