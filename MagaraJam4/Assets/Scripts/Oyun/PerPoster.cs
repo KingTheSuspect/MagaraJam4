@@ -17,8 +17,6 @@ public class PerPoster : MonoBehaviour
         dialogueText.color = new Color(dialogueText.color.r, dialogueText.color.g, dialogueText.color.b, 1f);
         if (collision.gameObject.layer == LayerMask.NameToLayer("Posters") && collision.gameObject.GetComponent<Posterid>().posternumber == posterreal)
         {
-            Debug.Log("PosterNumber" + collision.gameObject.GetComponent<Posterid>().posternumber);
-            Debug.Log("PosterReal" + posterreal);
             dialogueText.text = collision.gameObject.GetComponent<PosterController>().GetText();
             dialogueText.transform.gameObject.SetActive(true);
         }

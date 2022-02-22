@@ -78,17 +78,17 @@ public class RandomEvent : MonoBehaviour
                         hikaye.text = "Tam yatmak üzereyken küçük bir çocuk sana doðru geldi ve yemen için bir parça ekmek verdi.";
                         YemekSistemi.yemek += 20;
                         alindi = true;
-                        devam.SetActive(true);
+                        
                         break;
                     case 2:
                         hikaye.text = "Geçmini hatýrlamaya çalýþýyorsun ama olmuyor, koca bir boþluk gibi";
                         alindi = true;
-                        devam.SetActive(true);
+                        
                         break;
                     case 3:
                         hikaye.text = "Bu gece pek yatamýyorsun, aklýna sürekli bir zamanlar yanýnda olabildiðin ailen geliyor. Bir yandan özlediðin bu zamanlar diðer yandan kabusun olmuþ durumda...";
                         alindi = true;
-                        devam.SetActive(true);
+                        
                         break;
 
 
@@ -105,7 +105,7 @@ public class RandomEvent : MonoBehaviour
             {
                 case 1:
                     hikaye.text = "Þehrin tamamen alakasýz bir yerinde, sokakta yürürken ayaðýn bir taþa takýldý ve burkuldu. Ayaðýný biraz daha zorladýn fakat daha fazla yürüyemiyorsun. Hiç bilmediðin bir yerde bu soðukta yatmak zorunda kaldýn.";
-                    devam.SetActive(true);
+
                     break;
                 default:
                     break;
@@ -116,7 +116,7 @@ public class RandomEvent : MonoBehaviour
     {
         Time.timeScale = 1f;
         barinak.Devam();
-        devam.SetActive(false);
+        
 
     }
 

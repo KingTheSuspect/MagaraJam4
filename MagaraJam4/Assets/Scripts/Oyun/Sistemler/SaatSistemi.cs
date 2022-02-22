@@ -6,21 +6,20 @@ using UnityEngine;
 
 public class SaatSistemi : MonoBehaviour
 {
-    public static float saat = 8, dakika= 30;
+    public static float saat = 16, dakika= 30;
 
     public TextMeshProUGUI texts;
     public Animator animator;
     public static bool disarda = false;
     private bool ilk = true;
     public GameObject Gece;
-    public GameObject devam;
     public static event EventHandler MarketYenile;
     public GameObject ilkgece;
     private bool some = false;
     private void FixedUpdate()
     {
         texts.text = ""+saat.ToString("00")+":"+dakika.ToString("00");
-        dakika += 5 * Time.deltaTime;
+        dakika += 10 * Time.deltaTime;
         if (dakika > 59)
         {
             saat += 1;
@@ -55,7 +54,6 @@ public class SaatSistemi : MonoBehaviour
         animator.SetTrigger("Start");
         yield return new WaitForSeconds(2);
         animator.SetTrigger("Start2");
-        devam.SetActive(true);
         Gece.SetActive(true);
         yield return new WaitForSeconds(2);
         Time.timeScale = 0f;
@@ -76,7 +74,6 @@ public class SaatSistemi : MonoBehaviour
         animator.SetTrigger("Start2");
 
         Gece.SetActive(false);
-        devam.SetActive(false);
         GunSistemi.gun += 1;
         SaatSistemi.saat = 8;
         SaatSistemi.dakika = 30;
