@@ -15,6 +15,8 @@ public class SaatSistemi : MonoBehaviour
     public GameObject Gece;
     public GameObject devam;
     public static event EventHandler MarketYenile;
+    public GameObject ilkgece;
+    private bool some = false;
     private void FixedUpdate()
     {
         texts.text = ""+saat.ToString("00")+":"+dakika.ToString("00");
@@ -30,10 +32,21 @@ public class SaatSistemi : MonoBehaviour
         }
         if (saat >= 2 && saat < 7 && ilk == true)
         {
-            StartCoroutine(LoadLevel());
-            ilk = false;
             disarda = true;
-            
+            if (disarda == true && GunSistemi.gun == 1)
+            {
+                ilk = false;
+                some = true;
+                StartCoroutine(LoadLevel3());
+
+            }
+            if (some == false)
+            {
+                StartCoroutine(LoadLevel());
+                ilk = false;
+            }
+
+
         }
 
     }
@@ -44,6 +57,15 @@ public class SaatSistemi : MonoBehaviour
         animator.SetTrigger("Start2");
         devam.SetActive(true);
         Gece.SetActive(true);
+        yield return new WaitForSeconds(2);
+        Time.timeScale = 0f;
+    }
+    IEnumerator LoadLevel3()
+    {
+        animator.SetTrigger("Start");
+        yield return new WaitForSeconds(2);
+        animator.SetTrigger("Start2");
+        ilkgece.SetActive(true);
         yield return new WaitForSeconds(2);
         Time.timeScale = 0f;
     }

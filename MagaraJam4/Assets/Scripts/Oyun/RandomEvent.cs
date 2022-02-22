@@ -16,7 +16,6 @@ public class RandomEvent : MonoBehaviour
     private bool alindi = false;
     private bool tik = false;
     private BarinakBina barinak;
-    public GameObject ilkgece;
 
     void Start()
     {
@@ -99,11 +98,7 @@ public class RandomEvent : MonoBehaviour
 
 
         }
-        if (SaatSistemi.disarda == true && GunSistemi.gun == 1)
-        {
-            ilkgece.SetActive(true);
-        }
-        else if (SaatSistemi.disarda == true)
+        if (SaatSistemi.disarda == true && GunSistemi.gun > 1)
         {
             Randoms2();
             switch (random2)
@@ -124,6 +119,7 @@ public class RandomEvent : MonoBehaviour
         devam.SetActive(false);
 
     }
+
     public void Secenek1()
     {
         deger = 1;
