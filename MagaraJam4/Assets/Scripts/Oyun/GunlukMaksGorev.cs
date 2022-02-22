@@ -67,7 +67,7 @@ public class GunlukMaksGorev : MonoBehaviour
         {
             karakterlock = false;
         }
-        maksgorev = GunSistemi.gun;
+        maksgorev = GunSistemi.gun - 2;
 
 
     }
