@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class KartOyunu : MonoBehaviour
+public class KarakterTrigger : MonoBehaviour
 {
     private bool triggered;
     public int scene;
@@ -38,6 +38,10 @@ public class KartOyunu : MonoBehaviour
                 currentscene = SceneManager.GetActiveScene().buildIndex;
                 PlayerPrefs.SetInt("Saved", currentscene);
             }
+        }
+        if (GunlukMaksGorev.karakterlock == true && triggered)
+        {
+
         }
 
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OyunSayar : MonoBehaviour
+public class Posterid : MonoBehaviour
 {
-    public static int game;
+    public int posternumber;
 }

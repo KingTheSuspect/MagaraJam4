@@ -98,7 +98,11 @@ public class RandomEvent : MonoBehaviour
 
 
         }
-        if (SaatSistemi.disarda == true)
+        if (SaatSistemi.disarda == true && GunSistemi.gun == 1)
+        {
+
+        }
+        else if (SaatSistemi.disarda == true)
         {
             Randoms2();
             switch (random2)

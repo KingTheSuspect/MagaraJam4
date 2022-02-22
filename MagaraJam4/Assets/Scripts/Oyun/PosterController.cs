@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PosterController : MonoBehaviour
 {
+    [TextArea(3, 10)]
     [SerializeField] string posterText;
     public string GetText()
     {

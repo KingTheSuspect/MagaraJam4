@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class AnaMenuSahneDegistirme : MonoBehaviour
 {
     public Animator transition;
-    public int sahneid;
-    public int sahneid2;
+    public int oyna;
+    public int ayarlar;
     public float sure;
 
     public void Baslat()
@@ -16,7 +16,7 @@ public class AnaMenuSahneDegistirme : MonoBehaviour
     }
     public void Ayarlar()
     {
-        SceneManager.LoadScene(sahneid2);
+        SceneManager.LoadScene(ayarlar);
     }
     public void Cikis()
     {
@@ -26,7 +26,7 @@ public class AnaMenuSahneDegistirme : MonoBehaviour
     {
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(sure);
-        SceneManager.LoadScene(sahneid);
+        SceneManager.LoadScene(oyna);
     }
 
 }

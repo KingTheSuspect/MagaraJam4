@@ -33,10 +33,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Emektarlar.unity
     guid: 808007b65e34f2d4e81b7d6879e54893
   - enabled: 1
-    path: Assets/Scenes/Puzzle/PuzzleHeykel.unity
+    path: Assets/Scenes/PuzzleHeykel.unity
     guid: 9f17e478d0e4aaa4ca67d40420bfa00b
   - enabled: 1
-    path: Assets/Scenes/Puzzle/PuzzleKagit.unity
+    path: Assets/Scenes/PuzzleKagit.unity
     guid: 77dacd9822e465541b90e21836363b53
   - enabled: 1
     path: Assets/Scenes/TasKagitMakas.unity
