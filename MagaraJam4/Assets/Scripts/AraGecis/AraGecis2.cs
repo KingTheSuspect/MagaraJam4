@@ -12,9 +12,10 @@ public class AraGecis2 : MonoBehaviour
     public int scene;
     public TextMeshProUGUI text;
 
+
     public void Start()
     {
-        text.text = "Belki de Tanri'nin bizi avutma sekli, yaratma gücünü bahsetmesidir.";
+        text.text = "Belki de Tanri'nin bizi avutma þekli, yaratma gücünü bahþetmesidir.";
         StartCoroutine(LoadLevel());
         
     }
