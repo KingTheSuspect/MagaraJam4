@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/adam.unity
     guid: 6880eeb93a337eb4fa16248a835071b4
+  - enabled: 1
+    path: Assets/Scenes/Fotograf.unity
+    guid: 7a3d15e12d21fb248861b8524f731fae
   m_configObjects: {}
