@@ -45,6 +45,6 @@ public class checker : MonoBehaviour
     {
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(12);
+        SceneManager.LoadScene(14);
     }
 }

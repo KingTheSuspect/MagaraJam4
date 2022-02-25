@@ -10,11 +10,11 @@ public class IsikSistemi : MonoBehaviour
 
     private void Update()
     {
-        if (SaatSistemi.saat >= 18)
+        if (SaatSistemi.saat >= 19)
         {
             Baslat();
         }
-        if (SaatSistemi.saat <= 17 && SaatSistemi.saat > 7)
+        if (SaatSistemi.saat <= 18 && SaatSistemi.saat > 7)
         {
             Kapat();
         }
