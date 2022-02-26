@@ -39,7 +39,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PuzzleKagit.unity
     guid: 77dacd9822e465541b90e21836363b53
   - enabled: 1
-    path: Assets/Scenes/TasKagitMakas.unity
+    path: Assets/Scenes/Konusmalar/Konusma1.unity
     guid: 96704b512ee9431428ffcbae839e1ad6
   - enabled: 1
     path: Assets/Scenes/Son.unity
@@ -53,4 +53,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alkol.unity
     guid: f3a7f4bf43f2a044e8340729d656b34f
+  - enabled: 1
+    path: Assets/Scenes/Konusmalar/Konusma2.unity
+    guid: 8a719b4fde7dda1439b4ed06c310ffdd
+  - enabled: 1
+    path: Assets/Scenes/Konusmalar/Konusma3.unity
+    guid: 594169f56827d714bade65449da65353
+  - enabled: 1
+    path: Assets/Scenes/Konusmalar/Konusma4.unity
+    guid: c07bc30e6e5809e4c848964496a3e003
   m_configObjects: {}

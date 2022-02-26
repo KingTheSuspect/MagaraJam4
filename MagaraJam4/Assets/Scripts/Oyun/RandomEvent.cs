@@ -28,10 +28,10 @@ public class RandomEvent : MonoBehaviour
     {
         random = Random.Range(1, 4);
     }
-    private void Randoms2()
+   /* private void Randoms2()
     {
         random2 = Random.Range(1, 2);
-    }
+    }*/
 
     public void Update()
     {
@@ -43,6 +43,7 @@ public class RandomEvent : MonoBehaviour
                 hikaye.text = "Bugün oldukça soðuk bir gün, ýsýnman biraz zaman alacak gibi görünüyor. Bir süre sonra yanýna bir kedi geldi o da üþümüþ görünüyor.";
                 secenek1.SetActive(true);
                 secenek2.SetActive(true);
+                devam.SetActive(false);
                 ilk = false;
 
             }
@@ -98,7 +99,7 @@ public class RandomEvent : MonoBehaviour
 
 
         }
-        if (SaatSistemi.disarda == true && GunSistemi.gun > 1)
+       /* if (SaatSistemi.disarda == true && GunSistemi.gun > 1)
         {
             Randoms2();
             switch (random2)
@@ -110,7 +111,7 @@ public class RandomEvent : MonoBehaviour
                 default:
                     break;
             }
-        }
+        }*/
     }
     public void Devam()
     {
@@ -130,7 +131,9 @@ public class RandomEvent : MonoBehaviour
     }
     IEnumerator LoadLevel()
     {
+
         yield return new WaitForSeconds(2);
+        devam.SetActive(true);
         barinak.Devam();
     }
     IEnumerator LoadLevel2()

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class SaatSistemi : MonoBehaviour
 {
-    public static float saat = 16, dakika= 30;
+    public static float saat = 8, dakika= 30;
 
     public TextMeshProUGUI texts;
     public Animator animator;
@@ -19,7 +19,7 @@ public class SaatSistemi : MonoBehaviour
     private void FixedUpdate()
     {
         texts.text = ""+saat.ToString("00")+":"+dakika.ToString("00");
-        dakika += 10 * Time.deltaTime;
+        dakika += 8 * Time.deltaTime;
         if (dakika > 59)
         {
             saat += 1;

@@ -15,7 +15,7 @@ public class AraGecis2 : MonoBehaviour
 
     public void Start()
     {
-        text.text = "Belki de Tanri'nin bizi avutma þekli, yaratma gücünü bahþetmesidir.";
+        text.text = "Belki de her þeyin çözümü kaçmak degildir?";
         StartCoroutine(LoadLevel());
         
     }

@@ -7,21 +7,12 @@ public class GunlukMaksGorev : MonoBehaviour
     public static int maksgorev = 0;
     public static int durum = 0;
     public static bool karakterlock = false;
-    private bool kilit1;
     private bool kilit2;
     private bool kilit3;
     private bool kilit4;
 
     private void Update()
     {
-        if (kilit1 == false)
-        {
-            if (checker.karakter1 == true)
-            {
-                durum++;
-                kilit1 = true;
-            }
-        }
         if (kilit2 == false)
         {
             switch (checker.karakter2)

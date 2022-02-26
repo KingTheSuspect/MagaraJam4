@@ -34,7 +34,7 @@ public class checker : MonoBehaviour
         {
             Destroy(karater4);
         }
-        if (karakter1 == true && karakter2 == true && karakter3 == true && karakter4 == true && tek == true)
+        if (karakter2 == true && karakter3 == true && karakter4 == true && tek == true)
         {
 
             tek = false;
