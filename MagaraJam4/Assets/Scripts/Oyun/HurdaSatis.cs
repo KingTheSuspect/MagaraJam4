@@ -1,20 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HurdaSatis : MonoBehaviour
 {
-    Item item;
     Player player = null;
     private bool triggered;
     [HideInInspector] public Inventory inventory = null;
     public GameObject hurda;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Button leaveButton;
+    [SerializeField] Button buyButton;
 
     // Update is called once per frame
     void Update()
@@ -23,35 +21,46 @@ public class HurdaSatis : MonoBehaviour
         {
             Time.timeScale = 0f;
             hurda.SetActive(true);
-        }
-        if (player == null)
-        {
-            player = FindObjectOfType<Player>();
-            if (item.itemType == Item.ItemType.Trash)
-            {
-                inventory = player.GetInventory();
-            }
-        }
-    }
-
-    public void Satis()
-    {
-        if (item.amount > 0 && Enum.GetName(typeof(Item.ItemType), item.itemType).Contains("Trash") && inventory.inventoryType == Inventory.InventoryType.Player)
-        {
-            item.amount -= item.amount;
-            player.GetInventory().RemoveItem(item);
+            player.inventoryUI.SetActive(true);
             player.uiInventory.RefreshItems(player.GetInventory());
         }
     }
-    public void Ayril()
+
+    public void Satis(Player _player)
+    {
+        Item selectedItem = _player.GetInventory().GetItemList().FirstOrDefault(item => item.itemType == Item.ItemType.Trash);
+        if (selectedItem?.amount>0)
+        {
+            Player.money += selectedItem.amount * selectedItem.price;
+            selectedItem.amount -= selectedItem.amount;
+
+            _player.GetInventory().RemoveItem(selectedItem);
+            _player.uiInventory.RefreshItems(_player.GetInventory());
+        }
+    }
+    public void Ayril(Player _player)
     {
         Time.timeScale = 1f;
         hurda.SetActive(false);
+        _player.inventoryUI.SetActive(false);
+        _player.uiInventory.RefreshItems(_player.GetInventory());
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        player = collision.gameObject.GetComponent<Player>();
         triggered = true;
+        buyButton.onClick.RemoveAllListeners();
+        buyButton.onClick.AddListener(() =>
+        {
+            Satis(player);
+        });
+        leaveButton.onClick.RemoveAllListeners();
+        leaveButton.onClick.AddListener(()=> 
+        {
+            Ayril(player);
+        });
+
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

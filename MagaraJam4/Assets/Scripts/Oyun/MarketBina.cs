@@ -25,6 +25,8 @@ public class MarketBina : MonoBehaviour
             Time.timeScale = 0f;
             MarketUI.SetActive(true);
             marketInventoryUI.RefreshItems(marketInventory);
+            player.inventoryUI.SetActive(true);
+            player.uiInventory.RefreshItems(player.GetInventory());
         }
     }
     public void Satinal()
@@ -35,18 +37,17 @@ public class MarketBina : MonoBehaviour
             {
                 openBefore = false;
                 player.GetInventory().AddItem(marketInventoryUI.selectedItem);
-            marketInventory.RemoveItem(marketInventoryUI.selectedItem);
-            marketInventoryUI.RefreshItems(marketInventory);
-            if (player.uiInventory.gameObject.activeInHierarchy)
-                openBefore = true;
+                marketInventory.RemoveItem(marketInventoryUI.selectedItem);
+                marketInventoryUI.RefreshItems(marketInventory);
+                if (player.uiInventory.gameObject.activeInHierarchy)
+                    openBefore = true;
 
-            if (!openBefore)
-                player.uiInventory.gameObject.SetActive(true);
-           
-                
-                player.uiInventory.RefreshItems(player.GetInventory());
-                Player.money -= marketInventoryUI.selectedItem.price;
-                marketInventoryUI.selectedItem = null;
+                if (!openBefore)
+                    player.uiInventory.gameObject.SetActive(true);
+
+                    player.uiInventory.RefreshItems(player.GetInventory());
+                    Player.money -= marketInventoryUI.selectedItem.price;
+                    marketInventoryUI.selectedItem = null;
             }
             else
             {
@@ -64,6 +65,7 @@ public class MarketBina : MonoBehaviour
         MarketUI.SetActive(false);
         if(hata!=null)
             hata.SetActive(false);
+        player.inventoryUI.SetActive(false);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

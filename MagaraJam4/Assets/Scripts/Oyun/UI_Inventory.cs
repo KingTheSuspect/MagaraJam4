@@ -36,7 +36,10 @@ public class UI_Inventory : MonoBehaviour
             itemSlotRectTransform.Find("Count").GetComponent<TMPro.TMP_Text>().text = item.amount.ToString();
             if (inventory.inventoryType == Inventory.InventoryType.Market)
                 itemSlotRectTransform.Find("Count").GetComponent<TMPro.TMP_Text>().text = "$" + item.price.ToString();
-
+            if(item.itemType == Item.ItemType.Trash)
+            {
+                Destroy(itemSlotRectTransform.Find("image").GetComponent<Image>());
+            }
             x++;
             if (x > 4)
             {

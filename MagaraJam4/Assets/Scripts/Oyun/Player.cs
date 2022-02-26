@@ -11,10 +11,17 @@ public class Player : MonoBehaviour
     public UI_Inventory uiInventory;
     private Inventory inventory;
     public TextMeshProUGUI parasayar;
-
-    public static double money = 3.27;
+    public GameObject inventoryUI;
+    public static float money = 3.27f;
     public float itemGetDistance = 5f;
-    
+    public static Player playerInstance = null;
+    private void Awake()
+    {
+        if (playerInstance != null)
+            Destroy(playerInstance);
+        else
+            playerInstance = this;
+    }
     void Start()
     {
         inventory = transform.GetComponent<Inventory>();
